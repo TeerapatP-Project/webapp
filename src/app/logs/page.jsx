@@ -48,7 +48,7 @@ export default function LogsPage() {
               </thead>
               <tbody>
                 {logs.map((log) => (
-                  <tr key={log.created} className="border-t text-black">
+                  <tr key={log.created} className="border-t text-white">
                     <td className="py-2 px-4 text-center">{log.created}</td>
                     <td className="py-2 px-4 text-center">{log.country}</td>
                     <td className="py-2 px-4 text-center">{log.drone_id}</td>
