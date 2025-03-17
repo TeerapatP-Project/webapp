@@ -40,8 +40,8 @@ export default function ConfigPage() {
             <table className="min-w-full table-auto">
               <thead>
                 <tr className="bg-gray-200 text-left">
-                  <th className="px-4 py-2 text-lg font-semibold text-gray-900">Key</th>
-                  <th className="px-4 py-2 text-lg font-semibold text-gray-900">Value</th>
+                  <th className="px-4 py-2 text-lg font-semibold text-gray-900 text-center">Key</th>
+                  <th className="px-4 py-2 text-lg font-semibold text-gray-900 text-center">Value</th>
                 </tr>
               </thead>
               <tbody>
