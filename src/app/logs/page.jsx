@@ -25,7 +25,7 @@ export default function LogsPage() {
   }, []);
 
   return (
-    <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-15">
+    <div className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-15">
       <Navbar />
       <div className="mt-10 p-6 sm:p-8 bg-white bg-opacity-15 backdrop-blur-lg rounded-2xl shadow-xl w-full max-w-4xl transition-all duration-500">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center text-gray-900 mb-6 drop-shadow-lg">
