@@ -12,7 +12,7 @@ export default function ConfigPage() {
     const fetchDroneConfig = async () => {
       const droneId = process.env.NEXT_PUBLIC_DRONE_ID;
       try {
-        const response = await axios.get(`/api/configs/${droneId}`);
+        const response = await axios.get(`/api/configs/64050497`);
         setDroneConfig(response.data);
       } catch (error) {
         console.error("Error fetching drone config:", error);
