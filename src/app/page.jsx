@@ -12,7 +12,7 @@ export default function ConfigPage() {
     const fetchDroneConfig = async () => {
       const droneId = process.env.NEXT_PUBLIC_DRONE_ID;
       try {
-        const response = await axios.get(`/api/configs/64050497`);
+        const response = await axios.get(`/api/configs/${droneId}`);
         setDroneConfig(response.data);
       } catch (error) {
         console.error("Error fetching drone config:", error);
@@ -40,15 +40,15 @@ export default function ConfigPage() {
             <table className="min-w-full table-auto">
               <thead>
                 <tr className="bg-gray-200 text-left">
-                  <th className="px-4 py-2 text-lg font-semibold text-gray-900 text-center">Key</th>
-                  <th className="px-4 py-2 text-lg font-semibold text-gray-900 text-center">Value</th>
+                  <th className="px-4 py-2 text-lg font-semibold text-gray-900">Key</th>
+                  <th className="px-4 py-2 text-lg font-semibold text-gray-900">Value</th>
                 </tr>
               </thead>
               <tbody>
                 {Object.entries(droneConfig).map(([key, value]) => (
                   <tr key={key} className="border-t border-gray-300">
-                    <td className="px-4 py-2 text-gray-700 capitalize text-center">{key.replace("_", " ")}</td>
-                    <td className="px-4 py-2 text-gray-700 text-center">{value}</td>
+                    <td className="px-4 py-2 text-gray-700 capitalize">{key.replace("_", " ")}</td>
+                    <td className="px-4 py-2 text-gray-700">{value}</td>
                   </tr>
                 ))}
               </tbody>
