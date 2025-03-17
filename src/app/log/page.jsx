@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Link from "next/link";
-import Navbar from "../components/Navbar"; // เพิ่มการ import Navbar
+import Navbar from "../components/Navbar"; 
 
 export default function LogPage() {
   const [temperature, setTemperature] = useState("");

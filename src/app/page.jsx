@@ -46,9 +46,9 @@ export default function ConfigPage() {
               </thead>
               <tbody>
                 {Object.entries(droneConfig).map(([key, value]) => (
-                  <tr key={key} className="border-t border-gray-300">
-                    <td className="px-4 py-2 text-gray-700 capitalize">{key.replace("_", " ")}</td>
-                    <td className="px-4 py-2 text-gray-700">{value}</td>
+                  <tr key={key} className="border-t border-gray-300 text-center">
+                    <td className="px-4 py-2 text-gray-700 capitalize text-center">{key.replace("_", " ")}</td>
+                    <td className="px-4 py-2 text-gray-700 text-center">{value}</td>
                   </tr>
                 ))}
               </tbody>

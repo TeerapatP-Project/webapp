@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Navbar from '../components/Navbar'; // เพิ่มการ import Navbar
+import Navbar from '../components/Navbar'; 
 
 export default function LogsPage() {
   const [logs, setLogs] = useState([]);
@@ -10,18 +10,18 @@ export default function LogsPage() {
 
   useEffect(() => {
     const fetchLogs = async () => {
-      const droneId = process.env.NEXT_PUBLIC_DRONE_ID; // ใช้ค่าจาก env
+      const droneId = process.env.NEXT_PUBLIC_DRONE_ID; 
       try {
-        const response = await axios.get(`/api/logs/${droneId}`); // ใช้ path api ที่ rewrite ไว้
-        setLogs(response.data); // เก็บ logs ที่ได้มา
-        setLoading(false); // กำหนดสถานะว่าโหลดเสร็จแล้ว
+        const response = await axios.get(`/api/logs/${droneId}`); 
+        setLogs(response.data); 
+        setLoading(false); 
       } catch (error) {
         console.error('Error fetching logs:', error);
-        setLoading(false); // กำหนดสถานะว่าโหลดเสร็จแล้วแม้จะมีข้อผิดพลาด
+        setLoading(false); 
       }
     };
     fetchLogs();
-  }, []); // จะทำงานแค่ครั้งเดียวเมื่อ component โหลด
+  }, []); 
 
   return (
     <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 min-h-screen flex flex-col items-center px-4 sm:px-6 lg:px-8">
