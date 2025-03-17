@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import Navbar from '../components/Navbar'; 
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Navbar from "../components/Navbar";
+import { ClipLoader } from "react-spinners";
 
 export default function LogsPage() {
   const [logs, setLogs] = useState([]);
@@ -10,30 +11,30 @@ export default function LogsPage() {
 
   useEffect(() => {
     const fetchLogs = async () => {
-      const droneId = process.env.NEXT_PUBLIC_DRONE_ID; 
+      const droneId = process.env.NEXT_PUBLIC_DRONE_ID;
       try {
-        const response = await axios.get(`/api/logs/${droneId}`); 
-        setLogs(response.data); 
-        setLoading(false); 
+        const response = await axios.get(`/api/logs/${droneId}`);
+        setLogs(response.data);
+        setLoading(false);
       } catch (error) {
-        console.error('Error fetching logs:', error);
-        setLoading(false); 
+        console.error("Error fetching logs:", error);
+        setLoading(false);
       }
     };
     fetchLogs();
-  }, []); 
+  }, []);
 
   return (
-    <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 min-h-screen flex flex-col items-center px-4 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-15">
       <Navbar />
-      <div className="mt-10 p-6 sm:p-8 bg-white bg-opacity-20 backdrop-blur-lg rounded-2xl shadow-xl w-full max-w-4xl transition-all duration-500">
-        {/* เปลี่ยนส่วนนี้ให้เป็นแบบที่ปรับขนาดฟอนต์ตามหน้าจอ */}
+      <div className="mt-10 p-6 sm:p-8 bg-white bg-opacity-15 backdrop-blur-lg rounded-2xl shadow-xl w-full max-w-4xl transition-all duration-500">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center text-gray-900 mb-6 drop-shadow-lg">
           Drone Logs
         </h1>
         {loading ? (
-          <div className="text-center text-gray-900 font-semibold animate-pulse">
-            Loading logs...
+          <div className="flex justify-center items-center space-x-4">
+            <ClipLoader size={50} color="#9b4cdb" />
+            <span className="text-neutral-600 font-semibold text-xl animate-pulse">Just a sec... Loading</span>
           </div>
         ) : (
           <div className="overflow-x-auto">

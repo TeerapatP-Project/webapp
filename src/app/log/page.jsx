@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Link from "next/link";
-import Navbar from "../components/Navbar"; 
+import Navbar from "../components/Navbar";
 
 export default function LogPage() {
   const [temperature, setTemperature] = useState("");
@@ -45,26 +45,26 @@ export default function LogPage() {
   };
 
   return (
-    <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 min-h-screen flex flex-col items-center px-4 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-15">
       <Navbar />
-      <div className="mt-10 p-6 sm:p-8 bg-white bg-opacity-20 backdrop-blur-lg rounded-2xl shadow-xl w-full max-w-2xl transition-all duration-500">
-        <h1 className="text-4xl font-extrabold text-center text-gray-900 mb-6 drop-shadow-lg">
+      <div className="mt-10 p-6 sm:p-8 bg-white bg-opacity-15 backdrop-blur-lg rounded-2xl shadow-xl w-full max-w-2xl transition-all duration-500">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center text-gray-900 mb-6 drop-shadow-lg">
           Log Temperature
         </h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-gray-700 font-medium">Temperature (°C):</label>
+            <label className="block text-xl text-black font-medium">Temperature (°C):</label>
             <input
               type="number"
               value={temperature}
               onChange={(e) => setTemperature(e.target.value)}
               required
-              className="w-full p-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300 text-black"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300 text-black"
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-700 transition"
+            className="w-full bg-gradient-to-r from-green-400 to-green-600 text-white py-3 rounded-lg text-xl hover:bg-green-700 transition"
           >
             Submit Data
           </button>
