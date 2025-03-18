@@ -160,14 +160,14 @@ export default function LogPage() {
             severity={dialogSeverity}
             sx={{
               width: "100%",
-              borderRadius: "12px", // Softer rounded corners
-              fontSize: "14px", // Smaller font size
+              borderRadius: "12px", 
+              fontSize: "14px", 
               textAlign: "center",
-              padding: "12px 20px", // Adjust padding to be more compact
-              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Soft shadow for a clean look
+              padding: "12px 20px", 
+              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", 
               backgroundColor:
-                dialogSeverity === "success" ? "#e8f5e9" : "#fbe9e7", // Subtle background color
-              color: dialogSeverity === "success" ? "#388E3C" : "#D32F2F", // Text color matching the severity
+                dialogSeverity === "success" ? "#e8f5e9" : "#fbe9e7", 
+              color: dialogSeverity === "success" ? "#388E3C" : "#D32F2F", 
             }}
           >
             {dialogMessage}
