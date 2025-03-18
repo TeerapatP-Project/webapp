@@ -2,12 +2,27 @@
 
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Link from "next/link";
 import Navbar from "../components/Navbar";
+import {
+  TextField,
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Alert,
+  Box,
+  Typography,
+} from "@mui/material";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function LogPage() {
   const [temperature, setTemperature] = useState("");
   const [droneConfig, setDroneConfig] = useState(null);
+  const [openDialog, setOpenDialog] = useState(false);
+  const [dialogMessage, setDialogMessage] = useState("");
+  const [dialogSeverity, setDialogSeverity] = useState("success");
 
   useEffect(() => {
     const fetchDroneConfig = async () => {
@@ -36,40 +51,146 @@ export default function LogPage() {
         celsius: temperature,
         country: country,
       });
-      alert("Temperature logged successfully!");
+
+      setDialogMessage("✅ Temperature logged successfully!");
+      setDialogSeverity("success");
+      setOpenDialog(true);
       setTemperature("");
     } catch (error) {
       console.error("Error submitting log:", error);
-      alert("Failed to log temperature");
+      setDialogMessage("❌ Failed to log temperature");
+      setDialogSeverity("error");
+      setOpenDialog(true);
     }
   };
 
   return (
-    <div className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-15">
+    <div className="bg-gradient-to-br from-blue-100 via-gray-200 to-rose-100 min-h-screen flex flex-col items-center justify-center px-4 py-12">
       <Navbar />
-      <div className="mt-10 p-6 sm:p-8 bg-white bg-opacity-15 backdrop-blur-lg rounded-2xl shadow-xl w-full max-w-2xl transition-all duration-500">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center text-gray-900 mb-6 drop-shadow-lg">
+      <Box
+        component="div"
+        sx={{
+          mt: 6,
+          p: 6,
+          sm: 6,
+          bgcolor: "rgba(255, 255, 255, 0.6)",
+          backdropFilter: "blur(10px)",
+          borderRadius: "15px",
+          boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.15)",
+          maxWidth: "400px",
+          width: "100%",
+          transition: "all 0.3s ease-in-out",
+        }}
+      >
+        <Typography
+          variant="h4"
+          align="center"
+          gutterBottom
+          sx={{ fontWeight: 700, color: "#333" ,marginBottom: "20px"}}
+        >
           Log Temperature
-        </h1>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-xl text-black font-medium">Temperature (°C):</label>
-            <input
-              type="number"
-              value={temperature}
-              onChange={(e) => setTemperature(e.target.value)}
-              required
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300 text-black"
-            />
-          </div>
-          <button
+        </Typography>
+
+        <form onSubmit={handleSubmit}>
+          <TextField
+            label="Temperature (°C)"
+            type="number"
+            value={temperature}
+            onChange={(e) => setTemperature(e.target.value)}
+            required
+            fullWidth
+            variant="outlined"
+            sx={{ marginBottom: 3 }}
+          />
+          <Button
             type="submit"
-            className="w-full bg-gradient-to-r from-green-400 to-green-600 text-white py-3 rounded-lg text-xl hover:bg-green-700 transition"
+            variant="contained"
+            color="primary"
+            fullWidth
+            sx={{
+              padding: "10px",
+              fontSize: "16px",
+              borderRadius: "8px",
+              backgroundColor: "#4CAF50",
+              "&:hover": {
+                backgroundColor: "#388E3C",
+              },
+            }}
           >
             Submit Data
-          </button>
+          </Button>
         </form>
-      </div>
+      </Box>
+
+      <Dialog
+        open={openDialog}
+        onClose={() => setOpenDialog(false)}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+        sx={{
+          "& .MuiDialog-paper": {
+            borderRadius: "15px",
+            padding: "20px",
+            boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1)",
+            backgroundColor: "#fff",
+            minWidth: "300px",
+          },
+        }}
+      >
+        <DialogTitle
+          id="alert-dialog-title"
+          sx={{
+            fontWeight: 600,
+            textAlign: "center",
+            color: dialogSeverity === "success" ? "#4CAF50" : "#F44336",
+          }}
+        >
+          {dialogSeverity === "success" ? "Success!" : "Error!"}
+        </DialogTitle>
+        <DialogContent
+          id="alert-dialog-description"
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            paddingTop: "20px",
+          }}
+        >
+          <Alert
+            severity={dialogSeverity}
+            sx={{
+              width: "100%",
+              borderRadius: "12px", // Softer rounded corners
+              fontSize: "14px", // Smaller font size
+              textAlign: "center",
+              padding: "12px 20px", // Adjust padding to be more compact
+              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Soft shadow for a clean look
+              backgroundColor:
+                dialogSeverity === "success" ? "#e8f5e9" : "#fbe9e7", // Subtle background color
+              color: dialogSeverity === "success" ? "#388E3C" : "#D32F2F", // Text color matching the severity
+            }}
+          >
+            {dialogMessage}
+          </Alert>
+        </DialogContent>
+        <DialogActions sx={{ justifyContent: "center" }}>
+          <Button
+            onClick={() => setOpenDialog(false)}
+            color="primary"
+            sx={{
+              padding: "8px 16px",
+              backgroundColor: "#4CAF50",
+              color: "#fff",
+              borderRadius: "8px",
+              "&:hover": {
+                backgroundColor: "#388E3C",
+              },
+            }}
+          >
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 }

@@ -8,39 +8,50 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-lg shadow-lg h-20 flex items-center">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-8 w-full">
-        {/* Logo */}
-        <div className="text-4xl font-extrabold text-purple-400 tracking-widest drop-shadow-lg">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-md shadow-lg h-18 flex items-center transition-all duration-300">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 w-full">
+        {/* 🔹 Logo */}
+        <div className="text-3xl font-extrabold text-indigo-400 tracking-widest drop-shadow-md">
           Drone
         </div>
 
-        {/* Menu Button */}
+        {/* 🔹 Menu Button (Mobile) */}
         <button
-          className="lg:hidden text-purple-400 focus:outline-none"
+          className="lg:hidden text-indigo-400 focus:outline-none transition-all duration-300"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? (
-            <X className="w-10 h-10 transition-transform duration-300" />
+            <X className="w-8 h-8" />
           ) : (
-            <Menu className="w-10 h-10 transition-transform duration-300" />
+            <Menu className="w-8 h-8" />
           )}
         </button>
 
-        {/* Nav Links */}
+        {/* 🔹 Navigation Links */}
         <div
-          className={`absolute lg:static top-20 left-0 w-full lg:w-auto bg-black/95 lg:bg-transparent transition-all duration-300 ease-in-out backdrop-blur-lg rounded-lg shadow-xl lg:shadow-none lg:flex lg:items-center lg:space-x-12 text-lg font-semibold ${
-            isMenuOpen ? "opacity-100 visible scale-100" : "opacity-0 invisible scale-95"
+          className={`absolute lg:static top-18 left-0 w-full lg:w-auto lg:flex lg:items-center text-lg font-medium transition-all duration-300 ease-in-out ${
+            isMenuOpen
+              ? "opacity-100 visible scale-100"
+              : "opacity-0 invisible scale-95"
           } lg:opacity-100 lg:visible lg:scale-100`}
         >
-          <ul className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 py-6 lg:py-0">
-            {[{ href: "/", label: "Home" }, { href: "/log", label: "Post Logs" }, { href: "/logs", label: "About Logs" }].map((item) => (
+          <ul className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8 py-4 lg:py-0 bg-black/80 lg:bg-transparent">
+            {[
+              { href: "/", label: "Home", border: "border-blue-300" },
+              { href: "/log", label: "Post Logs", border: "border-green-300" },
+              {
+                href: "/logs",
+                label: "About Logs",
+                border: "border-purple-300",
+              },
+            ].map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-white relative px-6 py-3 rounded-lg text-xl transition duration-300 
-                             before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-1 before:bg-purple-400 before:transition-all before:duration-300 before:ease-in-out 
-                             hover:text-purple-400 hover:before:w-full hover:before:left-0 hover:scale-105"
+                  className="relative flex items-center justify-center w-32 h-10 text-base font-medium text-white 
+    rounded-lg transition-all duration-300 ease-in-out 
+    bg-transparent border-2 border-gray-500 hover:bg-gray-800 hover:text-white 
+    hover:border-gray-700 hover:shadow-xl hover:scale-110 hover:ring-4 hover:ring-gray-500"
                 >
                   {item.label}
                 </Link>
