@@ -50,7 +50,7 @@ const Navbar = () => {
                   href={item.href}
                   className="relative flex items-center justify-center w-32 h-10 text-base font-medium text-white 
     rounded-lg transition-all duration-300 ease-in-out 
-    bg-transparent border-2 border-gray-500 hover:bg-gray-800 hover:text-white 
+    bg-transparent border-2 border-gray-700 hover:bg-gray-800 hover:text-white 
     hover:border-gray-700 hover:shadow-xl hover:scale-110 hover:ring-4 hover:ring-gray-500"
                 >
                   {item.label}
