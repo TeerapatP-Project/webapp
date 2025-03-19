@@ -33,16 +33,12 @@ cd web_client
 npm install
 ```
 This will install the following libraries:
-This will install the following libraries:
-
-- **Next.js v15.2.2** - The React framework
-
-Next.js v15.2.2 - The React framework
-MUI - Material UI components
-Tailwind CSS - Utility-first CSS framework
-Framer Motion - Animations
-React Spinners - Loading indicators
-Axios - HTTP client for API requests
+- Next.js v15.2.2** - The React framework
+- MUI - Material UI components
+- Tailwind CSS - Utility-first CSS framework
+- Framer Motion - Animations
+- React Spinners - Loading indicators
+- Axios - HTTP client for API requests
 
 ```sh
 npm install @mui/material @emotion/react @emotion/styled react-spinners axios framer-motion
