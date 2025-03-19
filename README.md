@@ -28,7 +28,7 @@ To run this project locally, follow these steps:
 git clone https://github.com/TeerapatP-Project/web_client.git
 cd web_client
 ```
-###2️⃣ Install dependencies**
+###2️⃣ **Install dependencies
 ```sh
 npm install
 ```
