@@ -43,7 +43,7 @@ This will install the following libraries:
 ```sh
 npm install @mui/material @emotion/react @emotion/styled react-spinners axios framer-motion
 ```
-### 3️⃣ *etup environment variables
+### 3️⃣ Setup environment variables
 Create a .env.local file and add:
 ```sh
 NEXT_PUBLIC_DRONE_ID=64050497
@@ -59,6 +59,9 @@ npm run dev
 ```sh
 http://localhost:3000
 ```
+
+---
+
 ### 📜 Project Structure
 ```ruby
 web_client/
@@ -72,6 +75,9 @@ web_client/
 │── package.json     # Project dependencies
 │── next.config.js   # Next.js configuration
 ```
+
+---
+
 ### 🌍 API Integration
 This web client interacts with the API at api-webapp.vercel.app. It uses Axios to fetch data from these endpoints:
 
@@ -100,19 +106,31 @@ Content-Type: application/json
   "celsius": 25
 }
 ```
+
+---
+
 ### 🎨 UI Technologies Used
 Material UI (MUI) for modern UI components
 Tailwind CSS for flexible styling
 Framer Motion for animations
 React Spinners for loading indicators
+
+---
+
 ### 🚀 Deployment
 This project is deployed on Vercel. To deploy your own version, follow these steps: 1️⃣ Push your project to a GitHub repository
 2️⃣ Go to Vercel and import the repo
 3️⃣ Set environment variables on Vercel
 4️⃣ Deploy! 🎉
 
+---
+
+
 ### 📄 License
 This project is licensed under the MIT License.
+
+---
+
 
 ### ✨ Developed by: TeerapatP-Project
 ### 🚀 Powered by: Next.js, Express.js & Vercel
