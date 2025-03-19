@@ -62,7 +62,7 @@ http://localhost:3000
 
 ---
 
-### 📜 **Project Structure**
+## 📜 **Project Structure**
 ```ruby
 web_client/
 │── public/          # Static assets
@@ -78,7 +78,7 @@ web_client/
 
 ---
 
-### 🌍 **API Integration**
+## 🌍 **API Integration**
 This web client interacts with the API at api-webapp.vercel.app. It uses Axios to fetch data from these endpoints:
 
 ### ✈️ Drone Configs
@@ -109,7 +109,7 @@ Content-Type: application/json
 
 ---
 
-### 🎨 **UI Technologies Used**
+## 🎨 **UI Technologies Used**
 Material UI (MUI) for modern UI components
 Tailwind CSS for flexible styling
 Framer Motion for animations
@@ -117,7 +117,7 @@ React Spinners for loading indicators
 
 ---
 
-### 🚀 **Deployment**
+## 🚀 **Deployment**
 This project is deployed on Vercel. To deploy your own version, follow these steps: 1️⃣ Push your project to a GitHub repository
 2️⃣ Go to Vercel and import the repo
 3️⃣ Set environment variables on Vercel
@@ -126,7 +126,7 @@ This project is deployed on Vercel. To deploy your own version, follow these ste
 ---
 
 
-### 📄 **License**
+## 📄 **License**
 This project is licensed under the MIT License.
 
 ---
