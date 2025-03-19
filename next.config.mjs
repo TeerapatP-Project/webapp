@@ -4,11 +4,11 @@ const nextConfig = {
       return [
         {
           source: '/api/:path*',
-          destination: 'https://api-webapp.vercel.app/:path*', // เปลี่ยน URL ให้ตรงกับ API ของคุณ
+          destination: 'https://api-webapp.vercel.app/:path*', 
         },
       ]
     },
-    reactStrictMode: true, // เปิด React Strict Mode
+    reactStrictMode: true, 
   }
   
   export default nextConfig;

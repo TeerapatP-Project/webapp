@@ -116,7 +116,6 @@ export default function LogsPage() {
             </table>
 
             <div className="mt-4 flex flex-row justify-center items-center gap-4 py-2 w-full flex-wrap">
-              {/* Dropdown for Page Selection */}
               <FormControl variant="outlined" size="small" className="w-auto">
                 <InputLabel>Page</InputLabel>
                 <Select
@@ -132,7 +131,6 @@ export default function LogsPage() {
                 </Select>
               </FormControl>
 
-              {/* Pagination Buttons */}
               <Pagination
                 count={pageCount}
                 page={currentPage}

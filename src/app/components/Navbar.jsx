@@ -10,12 +10,11 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-md shadow-lg h-18 flex items-center transition-all duration-300">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 w-full">
-        {/* 🔹 Logo */}
+
         <div className="text-3xl font-extrabold text-indigo-400 tracking-widest drop-shadow-md">
           Drone
         </div>
 
-        {/* 🔹 Menu Button (Mobile) */}
         <button
           className="lg:hidden text-indigo-400 focus:outline-none transition-all duration-300"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -27,7 +26,6 @@ const Navbar = () => {
           )}
         </button>
 
-        {/* 🔹 Navigation Links */}
         <div
           className={`absolute lg:static top-18 left-0 w-full lg:w-auto lg:flex lg:items-center text-lg font-medium transition-all duration-300 ease-in-out ${
             isMenuOpen
