@@ -3,10 +3,10 @@
 A web client built with **Next.js v15.2.2**, designed for drone configuration and logging. This project integrates **MUI, Tailwind CSS, Framer Motion, and React Spinners** for the UI and uses **Axios** to communicate with the backend API.
 
 📌 **GitHub Repository:**  
-👉 [TeerapatP-Project/web_client](https://github.com/TeerapatP-Project/web_client.git)  
+👉 [TeerapatP-Project/webapp](https://github.com/TeerapatP-Project/webapp.git)
 
 🌐 **Live Website:**  
-👉 [webapp.vercel.app](https://webapp.vercel.app)  
+👉 [webapp.vercel.app](https://webapp-ruby-six.vercel.app/)  
 
 ---
 
