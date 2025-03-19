@@ -28,7 +28,7 @@ To run this project locally, follow these steps:
 git clone https://github.com/TeerapatP-Project/web_client.git
 cd web_client
 ```
-###2️⃣ **Install dependencies
+### 2️⃣ **Install dependencies
 ```sh
 npm install
 ```
@@ -42,28 +42,26 @@ React Spinners - Loading indicators
 Axios - HTTP client for API requests
 Run the following command to install additional dependencies:
 
-sh
-Copy
-Edit
+```sh
 npm install @mui/material @emotion/react @emotion/styled react-spinners axios framer-motion
-###3️⃣ Setup environment variables**
+```
+### 3️⃣ *etup environment variables
 Create a .env.local file and add:
-
 ```sh
 NEXT_PUBLIC_DRONE_ID=64050497
 NEXT_PUBLIC_DRONE_NAME=Teerapat Poolsap
 NEXT_PUBLIC_COUNTRY=Thailand
 NEXT_PUBLIC_API_BASE_URL=https://api-webapp.vercel.app
 ```
-###4️⃣ Run the development server**
+### 4️⃣ Run the development server
 ```sh
 npm run dev
 ```
-###Your web client will be available at:**
+### Your web client will be available at:
 ```sh
 http://localhost:3000
 ```
-###📜 Project Structure**
+### 📜 Project Structure
 ```ruby
 web_client/
 │── public/          # Static assets
@@ -76,10 +74,10 @@ web_client/
 │── package.json     # Project dependencies
 │── next.config.js   # Next.js configuration
 ```
-###🌍 API Integration**
+### 🌍 API Integration
 This web client interacts with the API at api-webapp.vercel.app. It uses Axios to fetch data from these endpoints:
 
-✈️ Drone Configs
+### ✈️ Drone Configs
 📍 Get drone configuration
 ```ts
 GET /configs/:drone_id
@@ -88,18 +86,13 @@ GET /configs/:drone_id
 ```ts
 GET /status/:drone_id
 ```
-📜 Drone Logs
+### 📜 Drone Logs
 📍 Get the latest 25 logs for a drone
-
-ts
-Copy
-Edit
+```ts
 GET /logs/:drone_id
+```
 📍 Add a new drone log
-
-ts
-Copy
-Edit
+```ts
 POST /logs
 Content-Type: application/json
 {
@@ -108,21 +101,22 @@ Content-Type: application/json
   "country": "USA",
   "celsius": 25
 }
-🎨 UI Technologies Used
+```
+### 🎨 UI Technologies Used
 Material UI (MUI) for modern UI components
 Tailwind CSS for flexible styling
 Framer Motion for animations
 React Spinners for loading indicators
-🚀 Deployment
+### 🚀 Deployment
 This project is deployed on Vercel. To deploy your own version, follow these steps: 1️⃣ Push your project to a GitHub repository
 2️⃣ Go to Vercel and import the repo
 3️⃣ Set environment variables on Vercel
 4️⃣ Deploy! 🎉
 
-📄 License
+### 📄 License
 This project is licensed under the MIT License.
 
-✨ Developed by: TeerapatP-Project
-🚀 Powered by: Next.js, Express.js & Vercel
+### ✨ Developed by: TeerapatP-Project
+### 🚀 Powered by: Next.js, Express.js & Vercel
 
 
