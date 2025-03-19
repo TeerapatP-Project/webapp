@@ -49,7 +49,6 @@ Create a .env.local file and add:
 NEXT_PUBLIC_DRONE_ID=64050497
 NEXT_PUBLIC_DRONE_NAME=Teerapat Poolsap
 NEXT_PUBLIC_COUNTRY=Thailand
-NEXT_PUBLIC_API_BASE_URL=https://api-webapp.vercel.app
 ```
 ### 4️⃣ Run the development server
 ```sh
