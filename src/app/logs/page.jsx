@@ -48,10 +48,7 @@ export default function LogsPage() {
 
   const pageCount = Math.ceil(logs.length / logsPerPage);
 
-  const pageNumbers = Array.from(
-    { length: pageCount },
-    (_, index) => index + 1
-  );
+  const pageNumbers = Array.from({ length: pageCount }, (_, index) => index + 1);
 
   return (
     <div className="bg-gradient-to-r from-blue-100 via-gray-200 to-rose-100 min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-20">
@@ -74,25 +71,15 @@ export default function LogsPage() {
             </span>
           </div>
         ) : (
-          <div className="overflow-x-auto w-fullborder">
+          <div className="overflow-x-auto w-full">
             <table className="min-w-full bg-white rounded-lg shadow-lg overflow-hidden border border-gray-300 ">
               <thead className="bg-gray-600 text-white">
                 <tr>
-                  <th className="py-3 px-4 text-gray-100 border-gray-300 border-b">
-                    Created
-                  </th>
-                  <th className="py-3 px-4 text-gray-100 border-gray-300 border-b">
-                    Country
-                  </th>
-                  <th className="py-3 px-4 text-gray-100 border-gray-300 border-b">
-                    Drone ID
-                  </th>
-                  <th className="py-3 px-4 text-gray-100 border-gray-300 border-b">
-                    Drone Name
-                  </th>
-                  <th className="py-3 px-4 text-gray-100 border-gray-300 border-b">
-                    Celsius
-                  </th>
+                  <th className="py-3 px-4 text-gray-100 border-gray-300 border-b">Created</th>
+                  <th className="py-3 px-4 text-gray-100 border-gray-300 border-b">Country</th>
+                  <th className="py-3 px-4 text-gray-100 border-gray-300 border-b">Drone ID</th>
+                  <th className="py-3 px-4 text-gray-100 border-gray-300 border-b">Drone Name</th>
+                  <th className="py-3 px-4 text-gray-100 border-gray-300 border-b">Celsius</th>
                 </tr>
               </thead>
               <tbody>
@@ -101,28 +88,19 @@ export default function LogsPage() {
                     key={index}
                     className="border-t border-gray-300 text-gray-900 hover:bg-gray-100 transition duration-300"
                   >
-                    <td className="py-3 px-4 text-center rounded-l-lg">
-                      {log.created}
-                    </td>
+                    <td className="py-3 px-4 text-center rounded-l-lg">{log.created}</td>
                     <td className="py-3 px-4 text-center">{log.country}</td>
                     <td className="py-3 px-4 text-center">{log.drone_id}</td>
                     <td className="py-3 px-4 text-center">{log.drone_name}</td>
-                    <td className="py-3 px-4 text-center rounded-r-lg">
-                      {log.celsius}
-                    </td>
+                    <td className="py-3 px-4 text-center rounded-r-lg">{log.celsius}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
-
-            <div className="mt-4 flex flex-row justify-center items-center gap-4 py-2 w-full flex-wrap">
-              <FormControl variant="outlined" size="small" className="w-auto">
+            <div className="mt-4 flex flex-col sm:flex-row justify-center items-center gap-4 py-2 w-full">
+              <FormControl variant="outlined" size="small" className="w-28 sm:w-auto">
                 <InputLabel>Page</InputLabel>
-                <Select
-                  value={currentPage}
-                  onChange={handleDropdownChange}
-                  label="Page"
-                >
+                <Select value={currentPage} onChange={handleDropdownChange} label="Page">
                   {pageNumbers.map((pageNumber) => (
                     <MenuItem key={pageNumber} value={pageNumber}>
                       Page {pageNumber}
@@ -130,7 +108,6 @@ export default function LogsPage() {
                   ))}
                 </Select>
               </FormControl>
-
               <Pagination
                 count={pageCount}
                 page={currentPage}
@@ -138,12 +115,12 @@ export default function LogsPage() {
                 variant="outlined"
                 shape="rounded"
                 color="primary"
-                size="large"
-                siblingCount={2}
-                boundaryCount={2}
+                size="medium"
+                siblingCount={1}
+                boundaryCount={1}
                 showFirstButton
                 showLastButton
-                className="flex justify-center items-center"
+                className="flex flex-wrap justify-center items-center"
               />
             </div>
           </div>
