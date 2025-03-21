@@ -131,7 +131,7 @@ This project is licensed under the MIT License.
 ---
 
 
-### ✨ Developed by: TeerapatP-Project
-### 🚀 Powered by: Next.js, Express.js & Vercel
+✨ **Developed by**: TeerapatP-Project
+🚀 **Powered by**: Next.js, Express.js & Vercel
 
 
