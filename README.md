@@ -64,15 +64,19 @@ http://localhost:3000
 ## 📜 **Project Structure**
 ```ruby
 web_client/
-│── public/          # Static assets
+│── public/                 # Static assets
 │── src/
-│   ├── components/  # Reusable UI components
-│   ├── pages/       # Next.js pages
-│   ├── styles/      # Global styles (Tailwind CSS)
-│   ├── utils/       # Helper functions
-│── .env.local       # Environment variables
-│── package.json     # Project dependencies
-│── next.config.js   # Next.js configuration
+│   ├── app/                # Main application directory
+│   │   ├── components/     # Reusable UI components
+│   │   │   ├── Navbar.jsx  # Navigation bar
+│   │   ├── log/            # Post Log
+│   │   │   ├── page.jsx
+│   │   ├── logs/           # Logs data
+│   │   ├── page.jsx        # Main page
+│── .env                    # Environment variables
+│── next.config.mjs         # Next.js configuration
+│── package.json            # Project dependencies
+│── README.md               # Project documentation
 ```
 
 ---
