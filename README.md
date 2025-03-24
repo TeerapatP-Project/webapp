@@ -72,6 +72,7 @@ web_client/
 │   │   ├── log/            # Post Log
 │   │   │   ├── page.jsx
 │   │   ├── logs/           # Logs data
+│   │   │   ├── page.jsx
 │   │   ├── page.jsx        # Main page
 │── .env                    # Environment variables
 │── next.config.mjs         # Next.js configuration
