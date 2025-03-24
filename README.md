@@ -41,7 +41,7 @@ This will install the following libraries:
 - **Axios** - HTTP client for API requests
 
 ```sh
-npm install @mui/material @emotion/react @emotion/styled react-spinners axios framer-motion
+npm install @mui/material @emotion/react @emotion/styled react-spinners axios framer-motion @mui/icons-material
 ```
 ### 3️⃣ Setup environment variables
 Create a .env.local file and add:

@@ -13,9 +13,8 @@ import {
   Alert,
   Box,
   Typography,
+  Container,
 } from "@mui/material";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 export default function LogPage() {
   const [temperature, setTemperature] = useState("");
@@ -65,63 +64,62 @@ export default function LogPage() {
   };
 
   return (
-    <div className="bg-gradient-to-br from-blue-100 via-gray-200 to-rose-100 min-h-screen flex flex-col items-center justify-center px-4 py-12">
+    <Box
+      sx={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        px: { xs: 2, sm: 4, md: 6 },
+        py: { xs: 6, md: 12 },
+        background: "linear-gradient(to bottom right, #ebf8ff, #e2e8f0, #fecdd3)",
+      }}
+    >
       <Navbar />
-      <Box
-        component="div"
+
+      <Container
+        maxWidth="sm"
         sx={{
-          mt: 6,
-          p: 6,
-          sm: 6,
-          bgcolor: "rgba(255, 255, 255, 0.6)",
-          backdropFilter: "blur(10px)",
-          borderRadius: "15px",
-          boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.15)",
-          maxWidth: "400px",
+          bgcolor: "white",
+          p: { xs: 3, md: 5 },
+          borderRadius: 3,
+          boxShadow: 3,
           width: "100%",
-          transition: "all 0.3s ease-in-out",
         }}
       >
-        <Typography
-          variant="h4"
-          align="center"
-          gutterBottom
-          sx={{ fontWeight: 700, color: "#333" ,marginBottom: "20px"}}
-        >
-          Log Temperature
+        <Typography variant="h4" className="font-extrabold text-center text-gray-800 mb-5 py-3 text-xl sm:text-3xl">
+        Log Temperature
         </Typography>
 
         <form onSubmit={handleSubmit}>
           <TextField
+            fullWidth
             label="Temperature (°C)"
-            type="number"
+            variant="outlined"
             value={temperature}
             onChange={(e) => setTemperature(e.target.value)}
-            required
-            fullWidth
-            variant="outlined"
-            sx={{ marginBottom: 3 }}
+            sx={{
+              mb: 3,
+            }}
           />
           <Button
             type="submit"
             variant="contained"
-            color="primary"
             fullWidth
             sx={{
-              padding: "10px",
-              fontSize: "16px",
-              borderRadius: "8px",
+              py: 1.5,
+              fontSize: "1rem",
               backgroundColor: "#4CAF50",
-              "&:hover": {
-                backgroundColor: "#388E3C",
-              },
+              "&:hover": { backgroundColor: "#388E3C" },
             }}
           >
-            Submit Data
+            Submit
           </Button>
         </form>
-      </Box>
+      </Container>
 
+      {/* Popup Dialog */}
       <Dialog
         open={openDialog}
         onClose={() => setOpenDialog(false)}
@@ -132,8 +130,7 @@ export default function LogPage() {
             borderRadius: "15px",
             padding: "20px",
             boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1)",
-            backgroundColor: "#fff",
-            minWidth: "300px",
+            minWidth: { xs: "80%", md: "400px" },
           },
         }}
       >
@@ -160,14 +157,13 @@ export default function LogPage() {
             severity={dialogSeverity}
             sx={{
               width: "100%",
-              borderRadius: "12px", 
-              fontSize: "14px", 
+              borderRadius: "12px",
+              fontSize: "14px",
               textAlign: "center",
-              padding: "12px 20px", 
-              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", 
+              padding: "12px 20px",
               backgroundColor:
-                dialogSeverity === "success" ? "#e8f5e9" : "#fbe9e7", 
-              color: dialogSeverity === "success" ? "#388E3C" : "#D32F2F", 
+                dialogSeverity === "success" ? "#e8f5e9" : "#fbe9e7",
+              color: dialogSeverity === "success" ? "#388E3C" : "#D32F2F",
             }}
           >
             {dialogMessage}
@@ -176,7 +172,6 @@ export default function LogPage() {
         <DialogActions sx={{ justifyContent: "center" }}>
           <Button
             onClick={() => setOpenDialog(false)}
-            color="primary"
             sx={{
               padding: "8px 16px",
               backgroundColor: "#4CAF50",
@@ -191,6 +186,6 @@ export default function LogPage() {
           </Button>
         </DialogActions>
       </Dialog>
-    </div>
+    </Box>
   );
 }
